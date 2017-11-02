@@ -27,3 +27,8 @@
     padding: 20px;
     margin: 0 0 0 20px;
 }
+
+.UserItem > small {
+    color: #2b2b2b;
+    font-weight: 700;
+}

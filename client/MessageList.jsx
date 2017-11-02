@@ -22,7 +22,7 @@ class MessageList extends React.Component {
     //     node.scrollTop = node.scrollHeight;
     // }
 
-    //scroll only if ser was already at the bottom of messages list
+    //scroll only if user was already at the bottom of messages list
     componentWillUpdate() {
         const node = ReactDOM.findDOMNode(this);
         this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight;
