@@ -4,6 +4,8 @@
 
 body {
     margin: 0;
+    padding: 0;
+    
 }
 
 .App {
@@ -28,6 +30,9 @@ body {
     justify-content: center;
     box-sizing: border-box;
     padding: 20px;
+    background-color: #696758;
+
+    color: white;
 }
 
 .AppRoom {
@@ -36,6 +41,7 @@ body {
     justify-content: center;
     box-sizing: border-box;
     padding: 20px;
+    background-color: #D5CFAE;
 }
 
 .AppBody {
@@ -49,4 +55,5 @@ body {
     flex-direction: column;
     width: 75vw;
     flex: 1;
+    background-color: #F5F0CD;
 }

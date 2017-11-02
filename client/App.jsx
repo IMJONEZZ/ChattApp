@@ -27,7 +27,7 @@ class App extends Component {
     }
 
     messageReceive(message) {
-        const messages = [message, ...this.state.messages];
+        const messages = [...this.state.messages, message];
         this.setState({messages})
     }
 
@@ -36,14 +36,18 @@ class App extends Component {
     }
 
     handleUserSubmit(name) {
-        this.setState({name});
-        socket.emit('join', name);
+        if(name) {
+            this.setState({name});
+            socket.emit('join', name);
+        }
     }
 
     handleMessageSubmit(message) {
-        const messages = [message, ...this.state.messages];
-        this.setState({messages});
-        socket.emit('message', message);
+        if (message.text) {
+            const messages = [...this.state.messages, message];
+            this.setState({messages});
+            socket.emit('message', message);
+        }
     }
 
     render() {
@@ -68,6 +72,7 @@ class App extends Component {
                     <div className={styles.MessageWrapper}>
                         <MessageList
                             messages={this.state.messages}
+                            name = {this.state.name}
                         />
                         <MessageForm
                             onMessageSubmit={message => this.handleMessageSubmit(message)}
