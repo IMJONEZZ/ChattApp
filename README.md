@@ -3,7 +3,7 @@ Simply chat application based on **Node.js**, **Express** & **Socket**.**io**
 
 ## Live demo
 
-You can see [here](https://chatapp-achromik.herokuapp.com/) a live demo of this application.
+Live demo on [https://chatapp-achromik.herokuapp.com/](https://chatapp-achromik.herokuapp.com/) 
 
 #### Installation
 
