@@ -48,7 +48,6 @@ class MessageList extends React.Component {
                                 text = {messages.text}
                                 name = {this.props.name}
                                 last = {(i > 0) ? this.props.messages[i-1].from : ''}
-                                
                             />    
                         );
                     })

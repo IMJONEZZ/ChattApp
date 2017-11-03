@@ -3,6 +3,9 @@ const http = require('http');
 const socketIo = require('socket.io');
 
 const app = express();
+
+app.set('port', (process.env.PORT || 3000));
+
 const server = http.createServer(app);
 const io = socketIo.listen(server);
 
@@ -42,14 +45,13 @@ io.on('connection', socket => {
     });
 
     socket.on('getUsers', () => {
-        console.log('getsues');
         io.emit('update', {
             users: userService.getAllUsers()
         });
     });
 });
 
-server.listen(3000, () => {
-    console.log('listening on *:3000');
+server.listen(app.get('port'), () => {
+    console.log('listening on ', app.get('port'));
 });
 
