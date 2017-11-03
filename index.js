@@ -39,7 +39,14 @@ io.on('connection', socket => {
             text: message.text,
             from: name
         });
-    })
+    });
+
+    socket.on('getUsers', () => {
+        console.log('getsues');
+        io.emit('update', {
+            users: userService.getAllUsers()
+        });
+    });
 });
 
 server.listen(3000, () => {
