@@ -36,7 +36,6 @@ class MessageList extends React.Component {
         }
     }
 
-
     render() {
         return (
             <div className={styles.MessageList}>
@@ -58,22 +57,5 @@ class MessageList extends React.Component {
         );
     }
 }
-
-// const MessageList = props => (
-//     <div className={styles.MessageList}>
-//         {
-//             props.messages.map( (messages, i) => {
-//                 return (
-//                     <Message 
-//                         key = {i}
-//                         from = {messages.from}        
-//                         text = {messages.text}
-//                         name = {props.name}
-//                     />    
-//                 );
-//             })
-//         }
-//     </div>
-// )
 
 export default MessageList;

@@ -33,8 +33,6 @@ class UserForm extends Component {
 
     handleChange(e) {
         const isUserNameExist = this.users.filter( (element) => element.name === e.target.value).length;
-
-
         if (isUserNameExist) {
             this.setState({info: 'Name already exist'});
         } else {
@@ -43,7 +41,6 @@ class UserForm extends Component {
         this.setState({
             name: e.target.value
         });
-       
     }
 
     render() {

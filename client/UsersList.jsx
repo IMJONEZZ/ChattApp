@@ -9,7 +9,7 @@ const UsersList = props => (
         </div>
         <ul className={styles.UsersList}>
             {
-                props.users.map((user) => {
+                props.users.sort(compareUserName).map((user) => {
                     return (
                         <li key={user.id} className={styles.UserItem}>
                             {user.name} {user.name === props.name ? <small>You</small> : ''}
@@ -22,3 +22,7 @@ const UsersList = props => (
 );
 
 export default UsersList;
+
+function compareUserName(a, b) {
+    return a.name.localeCompare(b.name);
+}
