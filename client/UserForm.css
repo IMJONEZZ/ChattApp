@@ -12,4 +12,10 @@
     border: 0;
     border-bottom: 1px solid #ccc;
     width: 510px;
+    text-align: center;
+}
+
+.UserInput:focus {
+    outline: none;
+
 }

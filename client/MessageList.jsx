@@ -5,7 +5,8 @@ import styles from './MessageList.css';
 
 const Message = props => (
     <div className={styles.Message + (props.from === props.name ? ' ' + styles.MessageRight : '')}>
-        <strong>{(props.from === props.name ? 'You' : props.from)}</strong>
+        {/* group messages from which user they are */}
+        <strong>{(props.last === props.from) ? '' :(props.from === props.name ? 'You' : props.from)}</strong>
         <span className = {styles.Cloud + (props.from === props.name ? ' ' + styles.CloudRight : '')}>{props.text}</span>
     </div>
 );
@@ -47,6 +48,8 @@ class MessageList extends React.Component {
                                 from = {messages.from}        
                                 text = {messages.text}
                                 name = {this.props.name}
+                                last = {(i > 0) ? this.props.messages[i-1].from : ''}
+                                
                             />    
                         );
                     })

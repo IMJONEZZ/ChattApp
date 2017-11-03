@@ -9,3 +9,7 @@
     border: 0;
     border-top: 1px solid #ccc;
 }
+
+.MessageInput:focus {
+    outline: none;
+}

@@ -74,6 +74,7 @@ class App extends Component {
                         <MessageList
                             messages={this.state.messages}
                             name = {this.state.name}
+                            last = {this.state.messages[this.state.messages.length-2]}
                         />
                         <MessageForm
                             onMessageSubmit={message => this.handleMessageSubmit(message)}
@@ -87,7 +88,7 @@ class App extends Component {
 
     renderUserForm() {
         return (
-            <UserForm onUserSubmit={ name => this.handleUserSubmit(name)} />
+            <UserForm onUserSubmit = { name => this.handleUserSubmit(name)} />
         );
     }
 };
