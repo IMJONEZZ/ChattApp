@@ -27,7 +27,12 @@ class App extends Component {
         socket.on('update', ({users}) => this.chatUpdate(users));
         socket.on('disconnect', () => { 
             this.onDisconnectStatus = 'Lost connection. Please log in again!';
-            this.setState({name: ''});
+            this.setState({
+                users: [],
+                messages: [],
+                text: '',
+                name: ''
+            });
         })
     }
 

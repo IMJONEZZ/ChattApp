@@ -9,8 +9,9 @@ class UserForm extends Component {
         super(props);
         this.state = {
             name: '',
-            info: ' '
+            info: this.props.onDisconnect
         };
+
     }
 
     componentWillMount () {
@@ -23,6 +24,7 @@ class UserForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        socket.emit('getUsers');
         const isUserNameExist = this.users.filter( (element) => element.name === this.state.name).length;
         if(!isUserNameExist) {
             this.props.onUserSubmit(this.state.name);
@@ -32,6 +34,10 @@ class UserForm extends Component {
     }
 
     handleChange(e) {
+        if(this.users === undefined) {
+            socket.emit('getUsers')
+            this.setState({info: 'Soory! No connection whit server! You can\'t log in!'});
+        };
         const isUserNameExist = this.users.filter( (element) => element.name === e.target.value).length;
         if (isUserNameExist) {
             this.setState({info: 'Name already exist'});
@@ -52,7 +58,7 @@ class UserForm extends Component {
                     onChange = { e => this.handleChange(e)}
                     value = {this.state.name}
                 />
-                <p> {this.props.onDisconnect !=''?this.props.onDisconnect : this.state.info} </p>
+                <p> { this.state.info} </p>
             </form>
         );
     }
