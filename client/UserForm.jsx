@@ -52,7 +52,7 @@ class UserForm extends Component {
                     onChange = { e => this.handleChange(e)}
                     value = {this.state.name}
                 />
-                <p> {this.state.info} </p>
+                <p> {this.props.onDisconnect !=''?this.props.onDisconnect : this.state.info} </p>
             </form>
         );
     }

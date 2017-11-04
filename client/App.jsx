@@ -19,11 +19,16 @@ class App extends Component {
             text: '',
             name: ''
         };
+        this.onDisconnectStatus = '';
     }
 
     componentDidMount() {
         socket.on('message', message => this.messageReceive(message));
         socket.on('update', ({users}) => this.chatUpdate(users));
+        socket.on('disconnect', () => { 
+            this.onDisconnectStatus = 'Lost connection. Please log in again!';
+            this.setState({name: ''});
+        })
     }
 
     messageReceive(message) {
@@ -88,7 +93,10 @@ class App extends Component {
 
     renderUserForm() {
         return (
-            <UserForm onUserSubmit = { name => this.handleUserSubmit(name)} />
+            <UserForm 
+                onUserSubmit = { name => this.handleUserSubmit(name)} 
+                onDisconnect = { this.onDisconnectStatus}  
+            />
         );
     }
 };
