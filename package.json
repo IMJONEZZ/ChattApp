@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/achromik/ChatApp.git"
+    "url": "git+https://github.com/IMJONEZZ/ChatApp.git"
   },
   "keywords": [
     "chat",
@@ -19,20 +19,22 @@
     "Express",
     "Socket.io"
   ],
-  "author": "Aleksander Chromik",
+  "author": "Chris Brousseau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/achromik/ChatApp/issues"
+    "url": "https://github.com/IMJONEZZ/ChatApp/issues"
   },
-  "homepage": "https://github.com/achromik/ChatApp#readme",
+  "homepage": "https://github.com/IMJONEZZ/ChatApp#readme",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "http": "0.0.0",
+    "mongoose": "^5.8.11",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-fontawesome": "^1.6.1",
     "scroll-into-view-if-needed": "^1.2.2",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.3.0",
     "socket.io-client": "^2.0.4"
   },
   "devDependencies": {
