@@ -1,0 +1,34 @@
+.Users {
+    display: flex;
+    flex: 1;
+    width: 25vw;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    background-image: linear-gradient(to bottom right, #33539e,#7facd6);
+    color: white;
+}
+
+.UsersOnline {
+    padding: 20px;
+    text-align: center;
+    background-image: linear-gradient(to bottom right,#7facd6, #bfb8da);
+}
+
+.UsersList {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.UserItem {
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 0 0 20px;
+}
+
+.UserItem > small {
+    color: #2b2b2b;
+    font-weight: 700;
+}

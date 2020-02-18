@@ -1,0 +1,27 @@
+.UserForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, #a5678e, #33539e);
+}
+
+.UserInput {
+    padding: 20px;
+    font-size: 1.8em;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 510px;
+    text-align: center;
+}
+
+.UserInput:focus {
+    outline: none;
+}
+
+.UserForm > p {
+    height: 30px;
+    color: red;
+}
